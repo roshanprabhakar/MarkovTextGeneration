@@ -23,7 +23,6 @@ public class MarkovTable {
             ArrayList<String> lines = new ArrayList<>();
 
             while ((fileLine = br.readLine()) != null) {
-                fileLine = stripInvalidChars(fileLine);
                 lines.add(fileLine);
             }
 
@@ -60,19 +59,6 @@ public class MarkovTable {
             }
             map.get(wordsInFile.get(i)).add(wordsInFile.get(i + 1));
         }
-    }
-
-    private String stripInvalidChars(String fileLine) {
-        String out = "";
-        for (int i = 0; i < fileLine.length(); i++) {
-            if (fileLine.charAt(i) == '.' || fileLine.charAt(i) == ',' || fileLine.charAt(i) == '!' || fileLine.charAt(i) == '?' ||
-                fileLine.charAt(i) == '"') {
-                out += "";
-            } else {
-                out += fileLine.charAt(i);
-            }
-        }
-        return fileLine;
     }
 
     public String getRandomFrom(String word) {
