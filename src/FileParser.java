@@ -9,9 +9,22 @@ public class FileParser {
         removeNewLines(lines);
         insertSpaces(lines);
         trimSpaces(lines);
+        removePunctuation(lines);
 
         writeDataToFile("TextSources/" + path, lines);
 
+    }
+
+    private void removePunctuation(ArrayList<String> lines) {
+        for (int line = 0; line < lines.size(); line++) {
+            String out = "";
+            for (int i = 0; i < lines.get(line).length(); i++) {
+                if (lines.get(line).charAt(i) != ',' && lines.get(line).charAt(i) != '?' && lines.get(line).charAt(i) != '!' && lines.get(line).charAt(i) != '-') {
+                    out += lines.get(line).charAt(i);
+                }
+            }
+            lines.set(line, out);
+        }
     }
 
     private void trimSpaces(ArrayList<String> lines) {
