@@ -17,7 +17,7 @@ public class MarkovTable {
 
         try {
 
-            BufferedReader br = new BufferedReader(new FileReader(filepath));
+            BufferedReader br = new BufferedReader(new FileReader("TextSources/" + filepath));
 
             String fileLine;
             ArrayList<String> lines = new ArrayList<>();
