@@ -8,12 +8,6 @@ public class Main {
 
     private static File textSources = new File("TextSources");
 
-
-    /**
-     * TODO:
-     *  - Remove space values from all keys in hashmap mt
-     *  - Remove punctuation values for all keys
-     */
     public static void main(String[] args) {
         fixFiles();
         loadAllFiles();

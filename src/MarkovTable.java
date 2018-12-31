@@ -6,6 +6,7 @@ import java.util.HashMap;
 public class MarkovTable {
 
     private HashMap<String, ArrayList<String>> map;
+    private String[] forbidden = new String[]{".",",","!","?","-"};
 
     public MarkovTable() {
         this.map = new HashMap<>();
@@ -45,6 +46,12 @@ public class MarkovTable {
                         wordsInFile.add(line.substring(spaceIndex, i));
                         spaceIndex = i + 1;
                     }
+                }
+            }
+
+            for (String forbiddenUse : forbidden) {
+                for (String key : map.keySet()) {
+                    if (map.get(key).contains(forbiddenUse)) map.get(key).remove(forbiddenUse);
                 }
             }
 
