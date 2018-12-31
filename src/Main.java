@@ -13,10 +13,13 @@ public class Main {
         loadAllFiles();
 
         Scanner scanner = new Scanner(System.in);
-        String var;
+        String input;
         while (true) {
-            var = scanner.nextLine();
-            System.out.println(mt.getRandomFrom(var));
+            System.out.println("---------- Enter a word ----------");
+            input = scanner.nextLine();
+            System.out.println(mt.getRandomFrom(input) + " could possibly follow this entry");
+            System.out.println("----------------------------------");
+            System.out.println();
         }
     }
 
